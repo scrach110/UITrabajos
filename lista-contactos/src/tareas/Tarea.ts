@@ -1,4 +1,4 @@
 
 export type Tarea = {
-    nombreTarea: String;
+    nombreTarea: string;
 }

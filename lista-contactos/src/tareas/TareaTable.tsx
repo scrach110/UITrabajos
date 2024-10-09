@@ -2,11 +2,12 @@ import { TareaRow } from "./TareaRow"
 import { Tarea } from "./Tarea"
 
 type tareaProps = {
-    tareas: Tarea[]
+    tareas: Tarea[];
+    eliminarTarea: (nombreTarea: string) => void;
 }
 
 
-export const TareaTable: React.FC<tareaProps> = ( { tareas } ) => {
+export const TareaTable: React.FC<tareaProps> = ( { tareas, eliminarTarea} ) => {
 
 
     return(
@@ -24,7 +25,7 @@ export const TareaTable: React.FC<tareaProps> = ( { tareas } ) => {
 
             {
                 tareas.map((tarea => 
-                    <TareaRow {...tarea}/>
+                    <TareaRow {...tarea} eliminarTarea={eliminarTarea}/>
                 ))
             }
 
